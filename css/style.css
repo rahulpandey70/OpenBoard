@@ -86,7 +86,7 @@ body {
     background-color: purple;
 }
 
-.eraser-conatainer {
+.eraser-container {
     height: 2rem;
     width: 6rem;
     display: flex;
@@ -99,6 +99,6 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.eraser-conatainer input {
+.eraser-container input {
     width: 80%;
 }
