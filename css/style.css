@@ -18,6 +18,7 @@ body {
     align-items: center;
     font-size: 1.5rem;
     border-radius: 50%;
+    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;   
 }
 
@@ -32,11 +33,23 @@ body {
     left: 26vw;
     border-radius: 20%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    animation-name: scale-tools;
+    animation-duration: 1s;
+}
+
+@keyframes scale-tools {
+    0%{
+        transform: scale(0, 1);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 .tools-container > * {
     display: block;
     width: 3rem;
+    cursor: pointer;
 }
 
 .pencil-container {
@@ -46,6 +59,7 @@ body {
     top: 7.3rem;
     left: 26vw;
     border-radius: 0.5rem;
+    display: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -89,7 +103,7 @@ body {
 .eraser-container {
     height: 2rem;
     width: 6rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
