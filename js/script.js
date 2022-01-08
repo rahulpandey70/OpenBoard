@@ -1,5 +1,8 @@
 let toolsContainer = document.querySelector(".tools-container");
 let optionsContainer = document.querySelector(".options-container");
+let pencilContainer = document.querySelector(".pencil-container");
+let eraserContainer = document.querySelector(".eraser-container");
+
 let flag = true;
 
 optionsContainer.addEventListener("click", (e) => {
@@ -24,4 +27,6 @@ function closeTools() {
   iconElem.classList.remove("fa-bars");
   iconElem.classList.add("fa-times");
   toolsContainer.style.display = "none";
+  pencilContainer.style.display = "none";
+  eraserContainer.style.display = "none";
 }
