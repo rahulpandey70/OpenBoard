@@ -1,2 +1,3 @@
 # OpenBoard
-Open Board
+
+![Screenshots](../assets/openboard.png)
