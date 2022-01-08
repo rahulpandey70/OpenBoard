@@ -1,3 +1,3 @@
 # OpenBoard
 
-![Screenshots](../assets/openboard.png)
+![Screenshots](./assets/openboard.png)
