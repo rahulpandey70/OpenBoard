@@ -5,6 +5,7 @@ let eraserContainer = document.querySelector(".eraser-container");
 let pencil = document.querySelector(".pencil");
 let eraser = document.querySelector(".eraser");
 let sticky = document.querySelector(".note");
+let upload = document.querySelector(".upload");
 
 let flag = true;
 let pencilFlag = false;
@@ -52,6 +53,44 @@ eraser.addEventListener("click", (e) => {
   } else {
     eraserContainer.style.display = "none";
   }
+});
+
+upload.addEventListener("click", (e) => {
+  // Open file explorer
+  let input = document.createElement("input");
+  input.setAttribute("type", "file");
+  input.click();
+
+  input.addEventListener("change", (e) => {
+    let file = input.files[0];
+    let url = URL.createObjectURL(file);
+
+    let stickyContainer = document.createElement("div");
+    stickyContainer.setAttribute("class", "sticky-note-container");
+    stickyContainer.innerHTML = `
+    <div class="header-container">
+        <div class="minimize"></div>
+        <div class="remove"></div>
+    </div>
+    <div class="note-container">
+        <img src="${url}"/>
+    </div>
+    `;
+
+    document.body.appendChild(stickyContainer);
+
+    let minimize = stickyContainer.querySelector(".minimize");
+    let remove = stickyContainer.querySelector(".remove");
+    noteAction(minimize, remove, stickyContainer);
+
+    stickyContainer.onmousedown = function (event) {
+      dragAndDrop(stickyContainer, event);
+    };
+
+    stickyContainer.ondragstart = function () {
+      return false;
+    };
+  });
 });
 
 sticky.addEventListener("click", (e) => {
