@@ -142,10 +142,12 @@ body {
 
 .minimize {
     background-color: rgb(43, 224, 43);
+    cursor: pointer;
 }
 
 .remove {
     background-color: red;
+    cursor: pointer;
 }
 
 .note-container {
